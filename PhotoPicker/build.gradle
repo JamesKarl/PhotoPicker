@@ -1,24 +1,37 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.library'
 
-buildscript {
-    repositories {
-        jcenter()
-        google()
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    resourcePrefix "__picker_"
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-
-        classpath 'com.novoda:bintray-release:0.7.0'
-
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
-allprojects {
-    repositories {
-        jcenter()
-        google()
-    }
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-    }
+dependencies {
+    compile "com.android.support:support-v4:$supportLibVersion"
+    compile "com.android.support:appcompat-v7:$supportLibVersion"
+    compile "com.android.support:design:$supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$supportLibVersion"
+    compile "com.android.support:support-annotations:$supportLibVersion"
+    compile "com.github.bumptech.glide:glide:$glideVersion"
+}
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'JamesKarl'
+    groupId = 'me.iwf.photopicker.jameskarl'
+    artifactId = 'PhotoPicker'
+    publishVersion = "${rootProject.ext.thisLibVersion}"
+    desc = 'Photo Picker'
+    website = 'https://github.com/JamesKarl/PhotoPicker'
 }

@@ -1,0 +1,12 @@
+ext {
+    thisLibVersion = "0.9.13"
+
+    compileSdkVersion = 27
+    buildToolsVersion = "27.0.2"
+
+    minSdkVersion = 18
+    targetSdkVersion = 25
+
+    supportLibVersion = '27.0.2'
+    glideVersion = "4.4.0"
+}
