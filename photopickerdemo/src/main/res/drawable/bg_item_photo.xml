@@ -2,6 +2,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 
     <stroke
-        android:width="1dip"
-        android:color="@color/__picker_item_photo_border_n" />
+            android:width="1dip"
+            android:color="@color/__picker_item_photo_border_n"/>
 </shape>
