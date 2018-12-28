@@ -6,12 +6,12 @@
             <item>
                 <shape>
                     <corners android:radius="2dip"/>
-                    <padding android:top="-2dip"
+                    <padding android:bottom="-2dip"
                              android:left="-2dip"
-                             android:bottom="-2dip"
-                             android:right="-2dip"/>
-                    <stroke android:width="1dip"
-                            android:color="@android:color/white"/>
+                             android:right="-2dip"
+                             android:top="-2dip"/>
+                    <stroke android:color="@android:color/white"
+                            android:width="1dip"/>
                 </shape>
             </item>
             <item android:drawable="@drawable/__picker_checkbox_marked"/>
@@ -23,12 +23,12 @@
             <item>
                 <shape>
                     <corners android:radius="2dip"/>
-                    <padding android:top="-2dip"
+                    <padding android:bottom="-2dip"
                              android:left="-2dip"
-                             android:bottom="-2dip"
-                             android:right="-2dip"/>
-                    <stroke android:width="1dip"
-                            android:color="@android:color/white"/>
+                             android:right="-2dip"
+                             android:top="-2dip"/>
+                    <stroke android:color="@android:color/white"
+                            android:width="1dip"/>
                 </shape>
             </item>
             <item android:drawable="@drawable/__picker_checkbox_n"/>
