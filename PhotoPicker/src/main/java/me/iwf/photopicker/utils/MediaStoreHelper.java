@@ -3,10 +3,6 @@ package me.iwf.photopicker.utils;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
@@ -14,12 +10,13 @@ import com.myb.datacollect.R;
 import me.iwf.photopicker.PhotoPicker;
 import me.iwf.photopicker.entity.PhotoDirectory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.provider.BaseColumns._ID;
 import static android.provider.MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME;
 import static android.provider.MediaStore.Images.ImageColumns.BUCKET_ID;
-import static android.provider.MediaStore.MediaColumns.DATA;
-import static android.provider.MediaStore.MediaColumns.DATE_ADDED;
-import static android.provider.MediaStore.MediaColumns.SIZE;
+import static android.provider.MediaStore.MediaColumns.*;
 
 /**
  * Created by donglua on 15/5/31.
@@ -30,7 +27,7 @@ public class MediaStoreHelper {
 
 
     public static void getPhotoDirs(FragmentActivity activity, Bundle args, PhotosResultCallback resultCallback) {
-        activity.getSupportLoaderManager()
+        LoaderManager.getInstance(activity)
                 .initLoader(0, args, new PhotoDirLoaderCallbacks(activity, resultCallback));
     }
 
