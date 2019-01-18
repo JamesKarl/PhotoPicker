@@ -9,8 +9,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.snackbar.Snackbar
-import com.myb.datacollect.R
-import com.myb.datacollect.common.base.BaseActivity
+import com.myb.common.base.BaseActivity
+import com.myb.shop.R
 import me.iwf.photopicker.PhotoPreview.EXTRA_CURRENT_ITEM
 import me.iwf.photopicker.PhotoPreview.EXTRA_PHOTOS
 import me.iwf.photopicker.PhotoPreview.EXTRA_SHOW_DELETE

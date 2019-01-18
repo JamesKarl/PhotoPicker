@@ -5,9 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
-import com.myb.datacollect.R
-import com.myb.datacollect.common.base.BaseActivity
-import com.myb.datacollect.common.ext.setStatusBarColor
+import com.myb.common.base.BaseActivity
+import com.myb.common.ext.setStatusBarColor
+import com.myb.shop.R
 import kotlinx.android.synthetic.main.common_action_bar.*
 import me.iwf.photopicker.event.OnItemCheckListener
 import me.iwf.photopicker.fragment.ImagePagerFragment

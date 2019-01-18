@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.myb.datacollect.R;
+import com.myb.shop.R;
 import me.iwf.photopicker.PhotoPickerActivity;
 import me.iwf.photopicker.adapter.PhotoPagerAdapter;
 

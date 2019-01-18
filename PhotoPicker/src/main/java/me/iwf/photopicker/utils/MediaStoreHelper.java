@@ -3,10 +3,10 @@ package me.iwf.photopicker.utils;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
-import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
-import com.myb.datacollect.R;
+import com.myb.shop.R;
 import me.iwf.photopicker.PhotoPicker;
 import me.iwf.photopicker.entity.PhotoDirectory;
 
@@ -25,10 +25,14 @@ public class MediaStoreHelper {
 
     public final static int INDEX_ALL_PHOTOS = 0;
 
-
-    public static void getPhotoDirs(FragmentActivity activity, Bundle args, PhotosResultCallback resultCallback) {
+    /*public static void getPhotoDirs(FragmentActivity activity, Bundle args, PhotosResultCallback resultCallback) {
         LoaderManager.getInstance(activity)
                 .initLoader(0, args, new PhotoDirLoaderCallbacks(activity, resultCallback));
+    }*/
+
+    public static void getPhotoDirs(Fragment fragment, Bundle args, PhotosResultCallback resultCallback) {
+        LoaderManager.getInstance(fragment)
+                .initLoader(0, args, new PhotoDirLoaderCallbacks(fragment.getContext(), resultCallback));
     }
 
     private static class PhotoDirLoaderCallbacks implements LoaderManager.LoaderCallbacks<Cursor> {

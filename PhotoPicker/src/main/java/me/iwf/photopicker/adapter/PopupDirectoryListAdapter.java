@@ -12,7 +12,7 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.myb.datacollect.R;
+import com.myb.shop.R;
 import me.iwf.photopicker.entity.PhotoDirectory;
 
 /**

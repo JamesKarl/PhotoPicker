@@ -12,7 +12,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.ListPopupWindow;
 import androidx.fragment.app.Fragment;
@@ -23,28 +22,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.myb.datacollect.R;
+import com.myb.shop.R;
 import me.iwf.photopicker.PhotoPickerActivity;
 import me.iwf.photopicker.adapter.PhotoGridAdapter;
 import me.iwf.photopicker.adapter.PopupDirectoryListAdapter;
 import me.iwf.photopicker.entity.Photo;
 import me.iwf.photopicker.entity.PhotoDirectory;
 import me.iwf.photopicker.event.OnPhotoClickListener;
-import me.iwf.photopicker.utils.AndroidLifecycleUtils;
-import me.iwf.photopicker.utils.ImageCaptureManager;
-import me.iwf.photopicker.utils.MediaStoreHelper;
-import me.iwf.photopicker.utils.PermissionsConstant;
-import me.iwf.photopicker.utils.PermissionsUtils;
+import me.iwf.photopicker.utils.*;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
-import static me.iwf.photopicker.PhotoPicker.DEFAULT_COLUMN_NUMBER;
-import static me.iwf.photopicker.PhotoPicker.EXTRA_PREVIEW_ENABLED;
-import static me.iwf.photopicker.PhotoPicker.EXTRA_SHOW_GIF;
+import static me.iwf.photopicker.PhotoPicker.*;
 import static me.iwf.photopicker.utils.MediaStoreHelper.INDEX_ALL_PHOTOS;
 
 /**
@@ -112,16 +104,13 @@ public class PhotoPickerFragment extends Fragment {
 
         boolean showGif = getArguments().getBoolean(EXTRA_GIF);
         mediaStoreArgs.putBoolean(EXTRA_SHOW_GIF, showGif);
-        MediaStoreHelper.getPhotoDirs(getActivity(), mediaStoreArgs,
-                new MediaStoreHelper.PhotosResultCallback() {
-                    @Override
-                    public void onResultCallback(List<PhotoDirectory> dirs) {
-                        directories.clear();
-                        directories.addAll(dirs);
-                        photoGridAdapter.notifyDataSetChanged();
-                        listAdapter.notifyDataSetChanged();
-                        adjustHeight();
-                    }
+        MediaStoreHelper.getPhotoDirs(this, mediaStoreArgs,
+                dirs -> {
+                    directories.clear();
+                    directories.addAll(dirs);
+                    photoGridAdapter.notifyDataSetChanged();
+                    listAdapter.notifyDataSetChanged();
+                    adjustHeight();
                 });
 
         captureManager = new ImageCaptureManager(getActivity());
